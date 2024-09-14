@@ -17,6 +17,8 @@ int main()
 {
 	int num_1;
 	int num_2;
+	int num_3; // answer
+	int num_4; // inputted answer
 
 	unsigned seed = time(0);
 	srand(seed);
@@ -24,17 +26,25 @@ int main()
 
 	num_1 = rand();
 	num_2 = rand();
+	num_3 = num_1 + num_2;
 
 
-
-	cout << "Press enter when ready for answer." << endl;
+	cout << "Press type the answer." << endl;
 	cout << endl;
 	cout << setw(20) << num_1 << endl;
 	cout << setw(15) << " + " << num_2 << endl;
 	cout << setw(22) << "-----------" << endl;
+	cin >> num_4;
 	cin.get();
-	cout << setw(20) << num_1 + num_2 << endl;
+	
+	if (num_4 != num_3)
+	{
+		cout << setw(20) << "You are incorrect. The answer is " << num_3;
+	}
 
-
+	else
+	{
+		cout << setw(20) << "You are correct!";
+	}
 	return 0;
 }
