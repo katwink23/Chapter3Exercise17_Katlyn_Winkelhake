@@ -10,24 +10,30 @@ make it so the student can enter a number and see if it is correct or incorrect
 #include <iostream>
 #include <iomanip>
 #include <cstdlib>
+#include <ctime>
 using namespace std;
 
 int main()
 {
-	double firstNumber = rand();
-	double secondNumber = rand();
-	double product;
-	
-	product = firstNumber + secondNumber;
+	int num_1;
+	int num_2;
+
+	unsigned seed = time(0);
+	srand(seed);
+
+
+	num_1 = rand();
+	num_2 = rand();
+
 
 
 	cout << "Press enter when ready for answer." << endl;
 	cout << endl;
-	cout << setw(20) << firstNumber << endl;
-	cout << setw(15) << " + " << secondNumber << endl;
+	cout << setw(20) << num_1 << endl;
+	cout << setw(15) << " + " << num_2 << endl;
 	cout << setw(22) << "-----------" << endl;
 	cin.get();
-	cout << setw(20) << product << endl;
+	cout << setw(20) << num_1 + num_2 << endl;
 
 
 	return 0;
